@@ -1,9 +1,9 @@
 import json
 import numpy as np
 
-from Class.GeometryGraph import GeometryGraph
-from Ideas.KruskalMST import KruskalMST
-from Ideas.Traversals import BFS,DFS
+from src.utils.mesh_util import GeometryGraph
+from src.fun.kruskal_minimum_spanning_tree import KruskalMST
+from src.fun.traversals import BFS,DFS
 
 input_file_path = r"Data\Test1.json"
 output_file_path = r"Data\Test1.out.json"

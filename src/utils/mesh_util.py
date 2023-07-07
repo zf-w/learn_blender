@@ -1,5 +1,7 @@
 import numpy as np
 
+from src.consts import INDEX_KEY_STRING, POSITION_KEY_STRING
+
 def CaluculateNormal(A, B, C):
     AB = B - A
     AC = C - A
@@ -54,7 +56,7 @@ class GeometryBuilder:
             
 
     def toGeoDict(self):
-        return {"position": list(self.__ps), "indices": list(self.__is)}
+        return {POSITION_KEY_STRING: list(self.__ps), INDEX_KEY_STRING: list(self.__is)}
 
 class GeometryEdgeList:
 
@@ -137,8 +139,8 @@ class GeometryGraph:
 
         self.__edgelist = GeometryEdgeList()
         
-        indices = geometry_dict["indices"]
-        ps = geometry_dict["position"]
+        indices = geometry_dict[INDEX_KEY_STRING]
+        ps = geometry_dict[POSITION_KEY_STRING]
 
         def distance2(i, j):
             
@@ -157,14 +159,14 @@ class GeometryGraph:
 
         # print(str(self.__edgelist))
     def getVSize(self):
-        return int(len(self.__geometry["position"]) / 3)
+        return int(len(self.__geometry[POSITION_KEY_STRING]) / 3)
 
     def getEdges(self):
         return self.__edgelist.toList()
 
     def buildGeometryWithEdges(self, edge_idxs):
-        ps0 = self.__geometry["position"]
-        indices0 = self.__geometry["indices"]
+        ps0 = self.__geometry[POSITION_KEY_STRING]
+        indices0 = self.__geometry[INDEX_KEY_STRING]
 
         builder = GeometryBuilder()
 
@@ -240,5 +242,5 @@ class GeometryGraph:
 # Test
 # position = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 # indices = [0, 1, 2]
-# geo_dict = {"position": position, "indices": indices}
+# geo_dict = {POSITION_KEY_STRING: position, INDEX_KEY_STRING: indices}
 # print(GeometryGraph(geo_dict).getEdges())

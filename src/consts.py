@@ -1,0 +1,2 @@
+POSITION_KEY_STRING = "position"
+INDEX_KEY_STRING = "index"

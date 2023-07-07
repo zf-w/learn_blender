@@ -7,7 +7,7 @@ import json
 scene = bpy.context
 selected_object = scene.active_object
 
-output_file_path = r"D:\3.Projects\1.py-create-3D\Data\Test"
+output_file_path = r"" # Path
 
 
 

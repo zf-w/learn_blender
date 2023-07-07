@@ -7,7 +7,7 @@ selected_object = scene.active_object
 
 new_name = "Custom_Object"
 
-input_file_path = r"D:\3.Projects\1.py-create-3D\Data\Test.out.json"
+input_file_path = r"" # path
 
 try:
     scene.object[new_name].free()

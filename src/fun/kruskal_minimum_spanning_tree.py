@@ -1,4 +1,4 @@
-from Ideas.DisjointSet import DisjointSet
+from src.fun.disjoint_set import DisjointSet
 
 def KruskalMST(n, edge_list):
     dj = DisjointSet(n)
