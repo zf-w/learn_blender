@@ -1,27 +1,31 @@
 import json
 import bpy
 import bmesh
+
+FACE_INDEX_KEY_STRING = "face_index"
+POSITION_KEY_STRING = "position"
+
 # Get the selected object
 scene = bpy.context
 selected_object = scene.active_object
 
 new_name = "Custom_Object"
 
-input_file_path = r"" # path
+input_file_path = r""  # path
 
 try:
     scene.object[new_name].free()
 except:
     print("Remove failed")
-    
+
 new_mesh = bpy.data.meshes.new("Custom_Mesh")
 obj = bpy.data.objects.new(new_name, new_mesh)
 bm = bmesh.new()
 
-geo_dict = json.load(open(input_file_path, 'r'))
+geo_dict = json.load(open(input_file_path, "r"))
 
-ps = geo_dict["position"]
-indices = geo_dict["indices"]
+ps = geo_dict[POSITION_KEY_STRING]
+indices = geo_dict[FACE_INDEX_KEY_STRING]
 
 for i3 in range(0, len(ps), 3):
     u = ps[i3]

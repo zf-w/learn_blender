@@ -1,2 +1,3 @@
-POSITION_KEY_STRING = "position"
+FACE_INDEX_KEY_STRING = "face_index"
 INDEX_KEY_STRING = "index"
+POSITION_KEY_STRING = "position"
